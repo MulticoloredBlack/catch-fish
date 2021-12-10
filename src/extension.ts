@@ -6,7 +6,10 @@ import Scheduler from './Scheduler';
 let instance:Scheduler;
 
 export async function activate(context: vscode.ExtensionContext) {
-	
+        const option = {
+            context,
+        };
+        instance = new Scheduler(option);
 		vscode.window.showInformationMessage('catch-fish成功启用');
 	}
 

@@ -1,10 +1,10 @@
 {
-	"name": "git-auto-commit",
-	"displayName": "git-auto-commit",
-	"description": "auto commit your code",
+	"name": "catch-fish",
+	"displayName": "catch-fish",
+	"description": "remember to catch-fish",
 	"author": "emjio",
 	"publisher": "emjio",
-	"version": "1.1.0",
+	"version": "0.1.0",
 	"repository": "https://github.com/emjio/git-auto-commit.git",
 	"engines": {
 		"vscode": "^1.59.0"
@@ -20,27 +20,44 @@
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "code-auto-commit.runCommit",
-				"title": "提交"
-			}
 		],
 		"configuration": {
 			"type": "object",
-			"title": "code-auto-commit",
+			"title": "catch-fish",
 			"properties": {
-				"code-auto-commit.commitTimeInterval": {
-					"type": "number",
-					"default": 3600000,
-					"description": "停止写代码后多久自动commit(单位毫秒)"
-				},
-				"code-auto-commit.autoPush": {
+				"catch-fish.autoTips": {
 					"type": "boolean",
-					"default": false,
-					"description": "是否自动推送到当前分支的远程"
+					"default": true,
+					"description": "是否每日自动提醒摸一会儿鱼"
+				},
+                "catch-fish.interval": {
+					"type": "number",
+					"default": 3600,
+					"description": "提醒起来活动喝水间隔，默认一小时。（单位秒）"
 				}
 			}
-		}
+		},
+        "viewsContainers": {
+            "activitybar": [
+              {
+                "id": "catch-fish",
+                "title": "catch-fish",
+                "icon": "/resources/Fish.svg"
+              }
+            ]
+          },
+          "views": {
+            "catch-fish": [
+              {
+                "id": "tools",
+                "name": "摸鱼助手"
+              },
+              {
+                "id": "hooks",
+                "name": "自定义摸鱼hooks(即将上线)"
+              }
+            ]
+          }
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",
