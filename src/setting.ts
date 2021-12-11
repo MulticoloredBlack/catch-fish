@@ -7,6 +7,6 @@ function getConfig<T = any>(key: string) {
 }
 
 export default {
-    interval:getConfig<Number>('interval')!,
-    autoTips:getConfig<Boolean>('autoTips')
+    interval:getConfig<number>('interval')!,
+    autoTips:getConfig<boolean>('autoTips')!,
 };

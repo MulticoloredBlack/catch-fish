@@ -1,6 +1,10 @@
 
 import { ExtensionContext } from 'vscode';
 declare global {
+    interface PluginOptions {
+        context:ExtensionContext,
+        setting:config,
+    }
 	interface Option {
         context:ExtensionContext
 	}
@@ -8,7 +12,7 @@ declare global {
 
     }
     interface config{
-        autoTips:Boolean,
+        autoTips:boolean,
         interval:number
     }
 }
