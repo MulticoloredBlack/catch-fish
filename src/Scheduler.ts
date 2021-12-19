@@ -8,10 +8,13 @@ interface InstallOptions {
 
 interface PluginInstance {
   changeOptions: ChangeOptions,
-
+  destory: DestoryOption
 }
 interface ChangeOptions {
   (option: Config): void
+}
+interface DestoryOption {
+  (): void
 }
 import setting from './setting';
 import * as vscode from 'vscode';
@@ -31,7 +34,7 @@ export default class Scheduler {
     const instance: PluginInstance = pluginsInstall.install({ setting, context: this.$option.context });
     this.pluginList.push(instance);
   }
-  public changeOptions(option: Config) {
+  public changeOptions(option: Config): void {
     this.setting = option;
     this.pluginList.forEach(instance => {
       instance.changeOptions(option);
@@ -44,5 +47,9 @@ export default class Scheduler {
     }));
     this.use(StateBar);
   }
-  destroy() {}
+  destroy(): void {
+    this.pluginList.forEach(el=>{
+      el.destory()
+    })
+  }
 }

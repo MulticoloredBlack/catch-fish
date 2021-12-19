@@ -100,9 +100,14 @@ class StateBar {
       });
     }
   }
+  destory(): void{
+    if (this.timer){
+      clearInterval(this.timer);
+    }
+  }
 }
 export default {
-  install: (option: PluginOptions) => {
+  install: (option: PluginOptions): StateBar => {
     return new StateBar(option);
   }
 };
