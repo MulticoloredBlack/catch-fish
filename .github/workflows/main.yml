@@ -1,0 +1,16 @@
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: build
+        run: yarn install && yarn lint 
+        env: 
+          CI: true
+      - uses: getsentry/action-git-diff-suggestions@main
+        with:
+          message: eslint
+      
