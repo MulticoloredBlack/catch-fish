@@ -12,3 +12,11 @@ export function getNow() {
   const dateTime = yy + '-' + mm + '-' + dd + ' ' + hh + ':' + mf + ':' + ss;
   return dateTime;
 }
+
+export function getMessage(hasIcon: boolean, totalTime: number): string {
+  const hour = Math.floor(totalTime / 3600);
+  const min = Math.floor(totalTime / 60);
+  // Test
+  // return `${hasIcon ? '$(megaphone)' : ''} 你已经连续工作${totalTime}秒`;
+  return `${hasIcon ? '$(megaphone)' : ''} 你已经连续工作${hour}小时${min}分钟`;
+}

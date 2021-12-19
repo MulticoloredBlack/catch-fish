@@ -37,8 +37,7 @@ export default class Scheduler {
       instance.changeOptions(option);
     });
   }
-  _init() {
-    console.log(111111);
+  private _init() {
     const subscriptions = this.$option.context.subscriptions;
     subscriptions.push(vscode.workspace.onDidChangeConfiguration(() => {
       console.log(setting);

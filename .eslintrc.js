@@ -18,6 +18,7 @@ module.exports = {
       { before: false, after: true }
     ],
     '@typescript-eslint/semi': 'warn',
+    'no-var-requires': 'off',
     curly: 'warn',
     eqeqeq: 'warn',
     'no-throw-literal': 'warn',
@@ -25,6 +26,7 @@ module.exports = {
     'comma-spacing': ['error', { before: false, after: true }],
     'keyword-spacing': ['error', { after: true }],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    'object-curly-spacing': ['error', 'always']
+    'object-curly-spacing': ['error', 'always'],
+    'indent': ['error', 2]
   },
 };

@@ -10,7 +10,7 @@ declare global {
   }
   interface Config {
     autoTips: boolean,
-    interval: number
+    interval: number,
   }
 }
 
