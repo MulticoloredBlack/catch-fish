@@ -49,7 +49,7 @@ export default class Scheduler {
   }
   destroy(): void {
     this.pluginList.forEach(el=>{
-      el.destory()
-    })
+      el.destory();
+    });
   }
 }
