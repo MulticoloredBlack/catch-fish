@@ -1,6 +1,7 @@
 
 import { ExtensionContext } from 'vscode';
 declare global {
+
   interface PluginOptions {
     context: ExtensionContext,
     setting: Config,
@@ -11,6 +12,24 @@ declare global {
   interface Config {
     autoTips: boolean,
     interval: number,
+  }
+  interface PluginsInstall {
+  install: InstallOptions
+  }
+
+  interface InstallOptions {
+  (option: PluginOptions): PluginInstance;
+  }
+
+  interface PluginInstance {
+  changeOptions: ChangeOptions,
+  destroy: DestroyOption
+  }
+  interface ChangeOptions {
+  (option: Config): void
+  }
+  interface  DestroyOption {
+  (): void
   }
 }
 
