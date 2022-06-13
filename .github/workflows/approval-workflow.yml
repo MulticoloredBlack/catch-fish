@@ -10,4 +10,5 @@ jobs:
       env:
         APPROVALS: "1"
         ADD_LABEL: "approved"
-        REMOVE_LABEL: "awaiting%20review"name: main
+        REMOVE_LABEL: "awaiting%20review"
+        name: main
