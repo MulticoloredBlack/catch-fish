@@ -1,25 +1,8 @@
-interface PluginsInstall {
-  install: InstallOptions
-}
 
-interface InstallOptions {
-  (option: PluginOptions): PluginInstance;
-}
-
-interface PluginInstance {
-  changeOptions: ChangeOptions,
-  destory: DestoryOption
-}
-interface ChangeOptions {
-  (option: Config): void
-}
-interface DestoryOption {
-  (): void
-}
 import setting from './setting';
 import * as vscode from 'vscode';
 import StateBar from './plugins/StateBar';
-
+import HolidayRemain from './plugins/HolidayRemain';
 export default class Scheduler {
   $option: Option;
   setting: Config;
@@ -43,13 +26,14 @@ export default class Scheduler {
   private _init() {
     const subscriptions = this.$option.context.subscriptions;
     subscriptions.push(vscode.workspace.onDidChangeConfiguration(() => {
-      console.log(setting);
+      this.changeOptions(setting);
     }));
+    this.use(HolidayRemain);
     this.use(StateBar);
   }
   destroy(): void {
     this.pluginList.forEach(el=>{
-      el.destory();
+      el.destroy();
     });
   }
 }

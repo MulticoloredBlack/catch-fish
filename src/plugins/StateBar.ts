@@ -100,7 +100,7 @@ class StateBar {
       });
     }
   }
-  destory(): void{
+  destroy(): void{
     if (this.timer){
       clearInterval(this.timer);
     }
