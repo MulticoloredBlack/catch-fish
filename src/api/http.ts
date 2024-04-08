@@ -26,12 +26,15 @@ export default abstract class HttpClient {
   };
   private _initializeResponseInterceptor = () => {
     this.instance.interceptors.response.use(
-      this._handleResponse,
+      ( res: AxiosResponse) => {
+        return res;
+      },
       this._handleError,
     );
   };
-  public async get<T = unknown>(url: string, params?: any){
-    return await this.instance.get<T>(url, { params });
+  public async get<T = any, R = AxiosResponse<T>>(
+    url: string, params?: any): Promise<R>{
+    return await this.instance.get<T, R>(url, { params });
   }
 
   public async post<T = unknown>(url: string, data?: any){
