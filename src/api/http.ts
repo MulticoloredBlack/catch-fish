@@ -26,9 +26,7 @@ export default abstract class HttpClient {
   };
   private _initializeResponseInterceptor = () => {
     this.instance.interceptors.response.use(
-      ( res: AxiosResponse) => {
-        return res;
-      },
+      this._handleResponse,
       this._handleError,
     );
   };
@@ -53,7 +51,7 @@ export default abstract class HttpClient {
     return await this.instance.request<T>(option);
   }
   private _handleResponse = ( res: AxiosResponse) => {
-    return res.data;
+    return res;
   };
 
   private _handleError = (error: any) =>{
