@@ -7,7 +7,6 @@ interface PluginSettings {
   confirmButtonText: string
   message: string
 }
-implements
 class HolidayRemain {
   $option: PluginOptions;
   settings: PluginSettings;
