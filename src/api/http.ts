@@ -30,8 +30,9 @@ export default abstract class HttpClient {
       this._handleError,
     );
   };
-  public async get<T = unknown>(url: string, params?: any){
-    return await this.instance.get<T>(url, { params });
+  public async get<T = any, R = AxiosResponse<T>>(
+    url: string, params?: any): Promise<R>{
+    return await this.instance.get<T, R>(url, { params });
   }
 
   public async post<T = unknown>(url: string, data?: any){
@@ -50,7 +51,7 @@ export default abstract class HttpClient {
     return await this.instance.request<T>(option);
   }
   private _handleResponse = ( res: AxiosResponse) => {
-    return res.data;
+    return res;
   };
 
   private _handleError = (error: any) =>{
