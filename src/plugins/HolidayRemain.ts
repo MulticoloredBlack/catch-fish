@@ -40,7 +40,9 @@ class HolidayRemain {
       subscriptions.push(holidayRemainBar);
       this.registerCommand(vscode.Uri.parse(response.data.papers[0]));
     } catch (e){
+      vscode.window.showErrorMessage ('获取节假日信息失败，请检查是否能访问到github');
       console.error(e);
+
     }
   }
   
