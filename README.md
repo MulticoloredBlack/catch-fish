@@ -1,19 +1,36 @@
 # catch-fish
+English | [简体中文](./README-zh.md) 
 
-这是一个帮助开发者摸鱼的插件。为了提高开发者的效率和愉悦工作而生。让开发者可以在vscode中完成快乐的摸鱼
+This is a plugin designed to help developers slack off. It is created to improve developers' efficiency and enjoyment at work, allowing them to have a fun time slacking off in vscode.
 
 ## Features
-- [ ] 每日提醒摸鱼，提醒距离最近的法定节假日倒计时
-- [ ] 老板键,一键隐藏功能
-- [ ] 观看视频
-- [ ] 看小说
-- [x] 健康提醒(连续编码一段时间之后提醒喝水，起来活动一下)
-- [ ] 其他的各种有意思的功能
+[x] Reminder for the countdown to the nearest statutory holiday
+[ ] Boss key, one-click hide function
+[ ] Watch videos
+[ ] Read novels
+[x] Health reminder (reminds to drink water and take a break after coding for a period of time)
+[ ] Various other interesting features
+Plugin Settings
+Contribution Guidelines
+The small features of this project are independent and decoupled submodules, so anyone can use their imagination to complete a small feature.
 
+## PR Process
+Click on the "fork" function in the top right corner of the project to fork it to your own project.
+Create a branch for any modifications you intend to make.
+Submit the branch and click on the pull request in this project. Describe the modifications in the pull request and set your title in the following format:
+feat:xxx for a new feature
+fix:xx for bug fixes
+refactor:xx for code refactoring
+Download and Installation
+shell
+### Download
+git clone https://github.com/{yourname}/catch-fish/
 
-## 插件设置
+### Install
+yarn
+Start
+Press F5 on Windows, and when a separate vscode window pops up and prompts that catch-fish has started successfully, it is up and running.
 
+On Mac, use fn + F5 to start debugging.
 
-
-
-**Enjoy!**
+Enjoy!
