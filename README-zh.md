@@ -1,3 +1,6 @@
+简体中文 | [English](./README.md) 
+
+
 # catch-fish
 
 这是一个帮助开发者摸鱼的插件。为了提高开发者的效率和愉悦工作而生。让开发者可以在vscode中完成快乐的摸鱼
@@ -28,8 +31,23 @@
 feat:xxx 表示新功能
 fix:xx 表示修改bug
 refactor:xx 表示重构部分代码
- 
 
+### 下载和安装
+
+```shell
+#下载
+git clone https://github.com/{yourname}/catch-fish/
+
+#安装
+yarn
+
+```
+
+### 启动
+
+windows 下按下f5，当弹出一个单独的vscode窗口并提示catch-fish成功启动就成功运行了
+
+mac使用fn+f5启动调试。
 
 
 **Enjoy!**
