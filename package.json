@@ -90,6 +90,6 @@
 		"webpack-cli": "^4.7.0"
 	},
 	"dependencies": {
-		"axios": "^0.27.2"
+		"axios": "^0.28.0"
 	}
 }
